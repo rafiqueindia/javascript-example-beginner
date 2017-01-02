@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <body>
+            <h1>
+                Let's test inheritance in Javascript!
+            </h1>
+            <Script>
+                // define Employee object
+                function Employee(){
+                    this.name="";
+                    this.dept="general";
+                    this.age=20;
+                }
+                
+                // create WorkBee object by inheriting Employee Object
+                
+                function WorkBee(){
+                    this.projects=[];
+                }
+                
+                
+                WorkBee.prototype = new Employee(); //inherits Employee object
+                
+                function Engineer(){
+                    this.dept="Engineering";
+                    this.machine="";
+                    
+                }
+                
+                Engineer.prototype=new WorkBee();
+                 Engineer.prototype.speciality="coding";
+               var eng =new Engineer();
+               console.log( eng.age) ; // logs 20 
+                console.log( eng.dept) ; // logs  Engineering
+                
+                
+            </Script>
+        </body>
+    </head>
+
+</html>

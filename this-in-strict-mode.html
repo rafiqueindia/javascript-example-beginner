@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <body>
+        <Script>
+           "use strict";
+function fun() { return this; }
+           
+console.assert(fun() === undefined);
+console.assert(fun.call(2) === 12);
+console.assert(fun.apply(null) === null);
+console.assert(fun.call(undefined) === undefined);
+console.assert(fun.bind(true)() === true);
+        </Script>
+    </body>
+</html>

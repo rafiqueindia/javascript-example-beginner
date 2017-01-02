@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+    <body>
+<div></div>
+
+<script>
+var displayDiv = document.getElementById("displayDiv");
+
+// Part 1 - Defining what do we want to do with the result
+var processJSON = function (json) {
+var result = JSON.parse(json);
+
+    result.collection.forEach(function(card) {
+var div = document.createElement("div");
+        div.innerHTML = card.name + " cost is " + card.price;
+
+        displayDiv.appendChild(div);
+    });
+}
+
+// Part 2 - Providing a function to display errors
+var displayError = function(error) {
+    displayDiv.innerHTML = error;
+}
+
+// Part 3 - Creating and setting up the XHR object
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', "cards.json");
+
+// Part 4 - Defining callbacks that XHR object will call for us
+xhr.onload = function(){
+if (xhr.status === 200) {
+        processJSON(xhr.response);
+    }
+}
+
+xhr.onerror = function() {
+    displayError("Unable to load RSS");
+}
+
+// Part 5 - Starting the process
+xhr.send();
+</script>
+    </body>
+</html>

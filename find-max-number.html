@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+<body>
+<script>
+'use strict'
+
+var num = [38,83.62,353,3,73,546,434,36];
+
+function findMax(numArray) {
+
+
+var maxNumber=numArray[0];
+for (var i=0;i<numArray.length;i++){
+      
+
+    if(numArray[i+1]>maxNumber)
+     {maxNumber=numArray[i+1]}
+
+}
+
+return maxNumber;
+
+}
+
+console.log(findMax(num));
+
+</script>
+</body>
+</html>

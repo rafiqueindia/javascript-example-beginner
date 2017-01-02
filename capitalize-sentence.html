@@ -1,0 +1,45 @@
+<html>
+    <body>
+
+        <script>
+
+function capitalize(text){ // function defined which takes the sentence 
+
+
+console.log(text);
+   
+   if (text==undefined||text.trim().length===0){  // checks if its balnk or not collection of spaces
+    alert("blank sentence");
+   
+   return ;  // Exits from program
+    }
+    text=text.trim();  // removes whitesspaces from start and end
+
+var txt = Array.from(text);  // putting each character into an array
+txt[0]=text[0].toUpperCase(); // Converting first element of array to uppercase
+
+
+for(i=1;i<txt.length;i++)  // Looping through 2nd element till last 
+
+{
+
+
+if (txt[i]==" ")   // checks whites space
+{
+    i+=1; //moves to next element / charecter
+    txt[i]=text[i].toUpperCase(); // converts character next to space to Capital Letter
+
+
+}
+
+}
+console.log(txt.join(""));  // converts array to string. and display.
+alert(txt.join(""));
+}
+capitalize("   hey bad boy g"   );
+//capitalize();
+        </script>
+
+        </body>
+
+</html>

@@ -1,0 +1,40 @@
+
+<html>
+    <body>
+        <script>
+                   
+        function Person() {
+    
+        }
+            
+            Person.prototype.name="Billu";  // adding propert to Person objet in runtime.
+            
+            var x = new Person();   // creating a new Person type object 
+            
+            x.name="Sudeep";   // reassing name propety to Sudeep
+            
+            console.log(x.name);       // prints Sudeep   
+                        
+            Person.prototype.age=18;   // adding another property ag
+            console.log(x.age);        // x object automatically get the age property with initial value 18
+            
+            var obj={}; // create empty object
+            console.log(typeof obj);  // check the type
+            console.log(Object.prototype.isPrototypeOf(obj)); // check whether obj is prototype of object.
+            obj.prop1="Property1";
+            console.log(obj.prop1);
+            
+            // Important when we use constructor function to create an object we create poperty/member variable or attribute or method using .prototye BUT incase of object literal we can directly use . propert name to define property.
+            
+            var person = new Object();  // Third way to create object we shoud avoid this for performance (as per w3school)
+            // here we call constructor of object object and assign to person . person is now empty object. it  inherits all property and method of object object.
+            person.firstName = "John";
+            person.lastName = "Doe";
+            person.age = 50;
+            person.eyeColor = "blue";
+            person.prototype.newprop="newproperty" ; //gives error
+            console.log( person.newprop);  // error
+            
+        </script>
+    </body>
+</html>

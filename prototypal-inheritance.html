@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Prototypal Inheritance</title>
+    </head>
+    <body>
+        <h1>Prototypal Inheritance</h1>
+        <script>
+            
+            function Animal(){
+                this.eat=true;
+            }
+        
+            
+            function Cow(){
+                this.legCount=4;
+            }
+            
+            Cow.prototype= new Animal();  // cow inherits Animal object 
+            
+            var myCow=new Cow();
+            
+            console.log(myCow.legCount);  // logs 4 , its mycows own property
+            console.log(myCow.eat);  // logs true because it inherits eat property
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+<body>
+<script>
+'use strict'
+function f3(){  
+    return this;
+  }
+ var x= f3.call(this);
+
+console.log(x);
+</script>
+</body>
+</html>

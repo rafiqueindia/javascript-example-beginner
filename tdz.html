@@ -1,0 +1,16 @@
+<html>
+<script>
+function foo(value) {  
+  var x = 1
+  if (true) {
+    /*
+     * TDZ for x
+     */
+   // console.log(x) // ReferenceError: x is not defined
+    //let x = 2 // here TDZ ends and x get its value
+    console.log(x) // => 2
+  }
+}
+foo()
+</script>
+</html>
